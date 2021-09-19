@@ -13255,7 +13255,10 @@ GameObject:
   - component: {fileID: 7288385109325353772}
   - component: {fileID: 6262098662442946308}
   - component: {fileID: 7512956704991397034}
+  - component: {fileID: 7495337226629502827}
+  - component: {fileID: 3331157568185397369}
   - component: {fileID: 1216672615891238}
+  - component: {fileID: 4717132543421772282}
   - component: {fileID: 3539243950399473255}
   m_Layer: 9
   m_Name: Half Orc Male DEMO
@@ -47194,6 +47197,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7495337226629502827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572037003187166278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e06e552b655c74bbecd2c00c52a3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponRange: 3
+--- !u!114 &3331157568185397369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572037003187166278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d425b564931ad47a1592b8caaed9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1216672615891238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47204,6 +47232,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3389ef1469ed3441ad729934546d094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4717132543421772282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572037003187166278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833d97411ba79a24cbfe5b6fc1ed6128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!136 &3539243950399473255

@@ -2,87 +2,93 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class Orbit : MonoBehaviour
+namespace RPG.Core
 {
-    //since i added the new input system the orbit zooms a bit- for now its good
-
-    public float turnSpeed = 4.0f;
-    [SerializeField] Transform player;
-
-    // array for storing if the 3 mouse buttons are dragging
-    bool[] isDragActive;
-
-    // for remembering if a button was down in previous frame
-    bool[] downInPreviousFrame;
-
-    public Vector3 offset;
-
-    void Start()
+    public class Orbit : MonoBehaviour
     {
-        offset = new Vector3(player.position.x-transform.position.x, player.position.y+2f - transform.position.y, player.position.z +2f - transform.position.z);
+        //since i added the new input system the orbit zooms a bit- for now its good
 
-        isDragActive = new bool[] { false, false, false };
-        downInPreviousFrame = new bool[] { false, false, false };
-    }
+        public float turnSpeed = 4.0f;
+        [SerializeField] Transform player;
 
-    void LateUpdate()
-    {
-        CheckDrag();
+        // array for storing if the 3 mouse buttons are dragging
+        bool[] isDragActive;
 
-    }
+        // for remembering if a button was down in previous frame
+        bool[] downInPreviousFrame;
 
+        public Vector3 offset;
+        [SerializeField] float height = 0f;
+        [SerializeField] float distance = 1f;
 
-    public void CheckDrag()
-    {
-        for (int i = 0; i < isDragActive.Length; i++)
+        void Start()
         {
-            if (Input.GetMouseButton(i))
+            offset = new Vector3(0f, height, distance);
+            //offset = new Vector3(player.position.x + 2f, player.position.y , player.position.z +2f );
+
+            isDragActive = new bool[] { false, false, false };
+            downInPreviousFrame = new bool[] { false, false, false };
+        }
+
+        void LateUpdate()
+        {
+            CheckDrag();
+
+        }
+
+
+        public void CheckDrag()
+        {
+            for (int i = 0; i < isDragActive.Length; i++)
             {
-                if (downInPreviousFrame[i])
+                if (Input.GetMouseButton(i))
+                {
+                    if (downInPreviousFrame[i])
+                    {
+                        if (isDragActive[i])
+                        {
+                            OnDragging(i);
+                        }
+                        else
+                        {
+                            isDragActive[i] = true;
+                            OnDraggingStart(i);
+                        }
+                    }
+                    downInPreviousFrame[i] = true;
+                }
+                else
                 {
                     if (isDragActive[i])
                     {
-                        OnDragging(i);
+                        isDragActive[i] = false;
+                        OnDraggingEnd(i);
                     }
-                    else
-                    {
-                        isDragActive[i] = true;
-                        OnDraggingStart(i);
-                    }
+                    downInPreviousFrame[i] = false;
                 }
-                downInPreviousFrame[i] = true;
-            }
-            else
-            {
-                if (isDragActive[i])
-                {
-                    isDragActive[i] = false;
-                    OnDraggingEnd(i);
-                }
-                downInPreviousFrame[i] = false;
             }
         }
-    }
-    public virtual void OnDraggingStart(int mouseButton)
-    {
-        //Debug.Log("MouseButton" + mouseButton + " START Drag");
-    }
-
-    public virtual void OnDragging(int mouseButton)
-    {
-        if (mouseButton == 1)
+        public virtual void OnDraggingStart(int mouseButton)
         {
-            offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
-            offset.y = 0f;
-
-            transform.position = player.position + offset;
-            transform.LookAt(player.position);
+            //Debug.Log("MouseButton" + mouseButton + " START Drag");
         }
-        //Debug.Log("MouseButton" + mouseButton + "DRAGGING");
-    }
 
-    public virtual void OnDraggingEnd(int mouseButton)
-    {
-        //Debug.Log("MouseButton" + mouseButton + " END Drag");
+        public virtual void OnDragging(int mouseButton)
+        {
+            if (mouseButton == 1)
+            {
+                offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
+                //offset.y = 0f;
+
+                transform.position = player.position + offset;
+                transform.LookAt(player.position);
+            }
+            //Debug.Log("MouseButton" + mouseButton + "DRAGGING");
+        }
+
+        public virtual void OnDraggingEnd(int mouseButton)
+        {
+            //Debug.Log("MouseButton" + mouseButton + " END Drag");
+        }
     }
 }
