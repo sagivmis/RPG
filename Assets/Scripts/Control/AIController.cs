@@ -66,10 +66,8 @@ namespace RPG.Control
 
             if (patrolPath != null)
             {
-                print("patrol not null");
                 if (AtWaypoint())
                 {
-                    print("at waypoint");
                     CycleWaypoint();
                 }
                 nextPos = GetCurrentWaypointPosition();
@@ -100,7 +98,6 @@ namespace RPG.Control
 
         private void Suspicious()
         {
-            print("suspicious");
             GetComponent<Scheduler>().CancelCurrentAction();
         }
 
