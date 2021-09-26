@@ -13,6 +13,8 @@ namespace RPG.Control
     {
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 5f;
+        [SerializeField] float waypointTolerance = 1f;
+        [SerializeField] PatrolPath patrolPath;
 
         Health health;
         GameObject player;
@@ -20,7 +22,8 @@ namespace RPG.Control
         Mover mover;
 
         Vector3 guardPosition;
-        float timeSinceLastSawPlayer = 0;
+        float timeSinceLastSawPlayer = Mathf.Infinity;
+        int waypointIndex = 0; // at start assign each one with random integer 
 
         private void Start()
         {
@@ -46,20 +49,48 @@ namespace RPG.Control
                 timeSinceLastSawPlayer = 0;
                 Attack();
             }
-            else if(timeSinceLastSawPlayer < suspicionTime)
+            else if (timeSinceLastSawPlayer < suspicionTime)
             {
                 Suspicious();
             }
             else
             {
-                Guard();
+                Patrol();
             }
             timeSinceLastSawPlayer += Time.deltaTime;
         }
 
-        private void Guard()
+        private void Patrol()
         {
-            mover.StartMoveAction(guardPosition);
+            Vector3 nextPos = guardPosition;
+
+            if (patrolPath != null)
+            {
+                print("patrol not null");
+                if (AtWaypoint())
+                {
+                    print("at waypoint");
+                    CycleWaypoint();
+                }
+                nextPos = GetCurrentWaypointPosition();
+            }
+            mover.StartMoveAction(nextPos);
+        }
+
+        private Vector3 GetCurrentWaypointPosition()
+        {
+            return patrolPath.GetChildPosition(waypointIndex);
+        }
+
+        private void CycleWaypoint()
+        {
+            waypointIndex = patrolPath.GetNextIndex(waypointIndex);
+        }
+
+        private bool AtWaypoint()
+        {
+            float distanceToWaypoint = Vector3.Distance(transform.position, GetCurrentWaypointPosition());
+            return distanceToWaypoint < waypointTolerance;
         }
 
         private void Attack()
@@ -69,6 +100,7 @@ namespace RPG.Control
 
         private void Suspicious()
         {
+            print("suspicious");
             GetComponent<Scheduler>().CancelCurrentAction();
         }
 

@@ -4,21 +4,20 @@ using UnityEngine;
 
 namespace RPG.Control
 {
-    public class Waypoint : MonoBehaviour
+    public class PatrolPath : MonoBehaviour
     {
         [SerializeField] float waypointRadius = 0.3f;
         private void OnDrawGizmos()
         {
             for (int i = 0; i < transform.childCount; i++)
             {
-                Transform child = GetChild(i);
-                Gizmos.DrawSphere(child.position, waypointRadius);
-                Gizmos.DrawLine(child.position, GetChild(GetNextIndex(i)).position);
+                Gizmos.DrawSphere(GetChildPosition(i), waypointRadius);
+                Gizmos.DrawLine(GetChildPosition(i), GetChildPosition(GetNextIndex(i)));
 
             }
         }
 
-        private int GetNextIndex(int i)
+        public int GetNextIndex(int i)
         {
             if (i + 1 == transform.childCount)
             {
@@ -28,9 +27,9 @@ namespace RPG.Control
             return i + 1;
         }
 
-        private Transform GetChild(int i)
+        public Vector3 GetChildPosition(int i)
         {
-            return transform.GetChild(i);
+            return transform.GetChild(i).position;
         }
     }
 
