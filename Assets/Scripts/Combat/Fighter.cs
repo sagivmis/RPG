@@ -14,7 +14,15 @@ namespace RPG.Combat{
         Animator animator;
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
+        private void OnDrawGizmosSelected()
+        {
+            if (gameObject.tag == "Player")
+            {
 
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere(transform.position, weaponRange);
+            }
+        }
         private void Start()
         {
             animator = GetComponent<Animator>();
