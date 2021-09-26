@@ -13,6 +13,7 @@ namespace RPG.Movement
 
         NavMeshAgent agent;
         Animator animator;
+        Health health;
 
         float playerAnimationMaxSpeed = 1.76f;
 
@@ -20,10 +21,12 @@ namespace RPG.Movement
         {
             agent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
+            health = GetComponent<Health>();
         }
 
         void Update()
         {
+            agent.enabled = !health.IsDead();
             UpdateAnimator();
 
         }

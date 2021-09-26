@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!136 &1652763250958039269
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670034476665596975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0.24, y: 1.7, z: 0.5}
+--- !u!1001 &4172724530773193504
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296975, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_Name
+      value: Baby Dragon Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017861365175029383, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 2ce1570da2f99ca48a312007ba6da8e1, type: 3}
+    - target: {fileID: 3017861365175029383, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2ddacba9814918a459eeb20550a447c0, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+--- !u!1 &2670034476665596975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2082247353468296975, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+  m_PrefabInstance: {fileID: 4172724530773193504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2670034476665596960 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+  m_PrefabInstance: {fileID: 4172724530773193504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4639274697577162382
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2670034476665596960}
+    m_Modifications:
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429466, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140781361517429479, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}
+      propertyPath: m_Name
+      value: Baby Dragon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f5d07fbc7723640b29023654cfccd6, type: 3}

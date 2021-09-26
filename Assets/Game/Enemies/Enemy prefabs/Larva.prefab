@@ -10,10 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8140781361517429466}
   - component: {fileID: 8140781361517429464}
-  - component: {fileID: 8140781361517429465}
-  - component: {fileID: 8140781361517429478}
   m_Layer: 0
-  m_Name: Baby Dragon
+  m_Name: Larva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8631759294859432726}
+  - {fileID: 6775309434494960397}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,91 +73,66 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8140781361517429465
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8140781361517429479}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.5
-  m_Direction: 1
-  m_Center: {x: 0.24, y: 1.7, z: 0.5}
---- !u!114 &8140781361517429478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8140781361517429479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de455fd020049b7418822c72e18f293c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &4641127577933764062
+--- !u!1001 &5755777194780234666
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8140781361517429466}
     m_Modifications:
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4389148187768085618, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
+    - target: {fileID: 1922417435784710685, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
       propertyPath: m_Name
-      value: BabyDragon
+      value: Larva
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
---- !u!4 &8631759294859432726 stripped
+    m_RemovedComponents:
+    - {fileID: 5117830807108094685, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
+--- !u!4 &6775309434494960397 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4008964157763684040, guid: 534ba20d831ba6f4a839b8c1d959e264, type: 3}
-  m_PrefabInstance: {fileID: 4641127577933764062}
+  m_CorrespondingSourceObject: {fileID: 1289750041946706087, guid: 92318b3a469fd274494e31d3e20b8017, type: 3}
+  m_PrefabInstance: {fileID: 5755777194780234666}
   m_PrefabAsset: {fileID: 0}
