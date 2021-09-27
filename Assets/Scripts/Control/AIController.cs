@@ -19,6 +19,7 @@ namespace RPG.Control
         [Range(0,1)]
         [SerializeField] float speedMultiplier = 0.8f;
         [SerializeField] PatrolPath patrolPath;
+
         [Header("Combat Configuration")]
         [SerializeField] bool suspicion = true;
         [SerializeField] bool attack = true;
@@ -37,7 +38,7 @@ namespace RPG.Control
 
         public float timeSinceLastSawPlayer = Mathf.Infinity;
         public float timeSinceArriveToWaypoint = Mathf.Infinity;
-        public int waypointIndex = 0; // at start assign each one with random integer 
+        public int waypointIndex; // at start assign each one with random integer 
 
         private void Start()
         {
@@ -45,7 +46,8 @@ namespace RPG.Control
             fighter = GetComponent<Fighter>();
             health = GetComponent<Health>();
             mover = GetComponent<Mover>();
-
+            if (patrolPath) waypointIndex = UnityEngine.Random.Range(1, patrolPath.transform.childCount);
+            else waypointIndex = 0;
             guardPosition = transform.position;
         }
 
