@@ -24,6 +24,7 @@ namespace RPG.Control
         [SerializeField] bool suspicion = true;
         [SerializeField] bool attack = true;
         [SerializeField] bool patrol = true;
+        [SerializeField] float damage = 3f;
 
 
         [Header("Prefab")]
@@ -131,6 +132,26 @@ namespace RPG.Control
         private bool InRange()
         {
             return (Vector3.Distance(transform.position, player.transform.position) < chaseDistance);
+        }
+
+        //ANIMATIONS 
+
+        public void BabyDragonNormal()
+        {
+            player.GetComponent<Health>().TakeDamage(damage);
+        }
+        public void SpiderNormal()
+        {
+            player.GetComponent<Health>().TakeDamage(damage);
+        }
+        public void LarvaNormal()
+        {
+            //if contains BOSS component/tag increase dmg
+            player.GetComponent<Health>().TakeDamage(damage);
+        }
+        public void HyenaNormal()
+        {
+            player.GetComponent<Health>().TakeDamage(damage);
         }
     }
 

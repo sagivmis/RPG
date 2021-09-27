@@ -31,6 +31,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de455fd020049b7418822c72e18f293c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5342073536286600226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082247353468296975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ac1bd912fd78845a48646823db98d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
+  suspicionTime: 5
+  dwellTime: 2
+  waypointTolerance: 1
+  speedMultiplier: 0.8
+  patrolPath: {fileID: 0}
+  suspicion: 1
+  attack: 1
+  patrol: 1
+  guardPosition: {x: 0, y: 0, z: 0}
+  timeSinceLastSawPlayer: Infinity
+  timeSinceArriveToWaypoint: Infinity
+  waypointIndex: 0
 --- !u!1001 &6928580701849074622
 PrefabInstance:
   m_ObjectHideFlags: 0
