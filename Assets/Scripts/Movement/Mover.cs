@@ -15,7 +15,8 @@ namespace RPG.Movement
         Animator animator;
         Health health;
 
-        float playerAnimationMaxSpeed = 1.76f;
+        [Header("ETC")]
+        [SerializeField] float playerAnimationMaxSpeed = 1.76f;
 
         void Start()
         {

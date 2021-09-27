@@ -11,19 +11,33 @@ namespace RPG.Control
 
     public class AIController : MonoBehaviour
     {
+        [Header("Movement Configuration")]
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 5f;
+        [SerializeField] float dwellTime = 2f;
         [SerializeField] float waypointTolerance = 1f;
+        [Range(0,1)]
+        [SerializeField] float speedMultiplier = 0.8f;
         [SerializeField] PatrolPath patrolPath;
+        [Header("Combat Configuration")]
+        [SerializeField] bool suspicion = true;
+        [SerializeField] bool attack = true;
+        [SerializeField] bool patrol = true;
+
+
+        [Header("Prefab")]
 
         Health health;
         GameObject player;
         Fighter fighter;
         Mover mover;
 
-        Vector3 guardPosition;
-        float timeSinceLastSawPlayer = Mathf.Infinity;
-        int waypointIndex = 0; // at start assign each one with random integer 
+        [Header("AI Memory")]
+        public Vector3 guardPosition;
+
+        public float timeSinceLastSawPlayer = Mathf.Infinity;
+        public float timeSinceArriveToWaypoint = Mathf.Infinity;
+        public int waypointIndex = 0; // at start assign each one with random integer 
 
         private void Start()
         {
@@ -44,21 +58,27 @@ namespace RPG.Control
         {
             if (health.IsDead()) return;
 
-            if (InRange() && fighter.CanAttack(player))
+            if (InRange() && fighter.CanAttack(player) && attack)
             {
-                timeSinceLastSawPlayer = 0;
                 Attack();
             }
-            else if (timeSinceLastSawPlayer < suspicionTime)
+            else if (timeSinceLastSawPlayer < suspicionTime && suspicion)
             {
                 Suspicious();
             }
-            else
+            else if (patrol) 
             {
                 Patrol();
             }
-            timeSinceLastSawPlayer += Time.deltaTime;
+            UpdateTimers();
         }
+
+        private void UpdateTimers()
+        {
+            timeSinceLastSawPlayer += Time.deltaTime;
+            timeSinceArriveToWaypoint += Time.deltaTime;
+        }
+
 
         private void Patrol()
         {
@@ -68,11 +88,15 @@ namespace RPG.Control
             {
                 if (AtWaypoint())
                 {
+                    timeSinceArriveToWaypoint = 0;
                     CycleWaypoint();
                 }
                 nextPos = GetCurrentWaypointPosition();
             }
-            mover.StartMoveAction(nextPos);
+            if(timeSinceArriveToWaypoint > dwellTime)
+            {
+                mover.StartMoveAction(nextPos);
+            }
         }
 
         private Vector3 GetCurrentWaypointPosition()
@@ -93,6 +117,7 @@ namespace RPG.Control
 
         private void Attack()
         {
+            timeSinceLastSawPlayer = 0;
             fighter.Attack(player);
         }
 

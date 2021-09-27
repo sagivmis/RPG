@@ -7,6 +7,7 @@ using UnityEngine;
 namespace RPG.Combat{
     public class Fighter : MonoBehaviour, IAction
     {
+        [Header("Weapon Configuration")]
         [SerializeField] float weaponRange = 3f;
         [SerializeField] float timeBetweenAttacks = 1.05f;
         [SerializeField] float primaryWeaponDamage = 5f;

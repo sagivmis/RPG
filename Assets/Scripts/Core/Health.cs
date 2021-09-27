@@ -8,7 +8,7 @@ namespace RPG.Core
 {
     public class Health : MonoBehaviour
     {
-
+        [Header("Health Configuration")]
         [SerializeField] float healthPoints = 100f;
 
         Animator animator;
