@@ -10,13 +10,21 @@ namespace RPG.Movement
 {
     public class Mover : MonoBehaviour, IAction
     {
+        [SerializeField] float maxSpeed = 9.3f;
+        /*
+         * SPIDER:: 3f
+         * BABY DRAGON:: 4f
+         * HYENA:: 6f
+         * LARVA:: 2f
+         * LARVA:: 3f
+         */
 
         NavMeshAgent agent;
         Animator animator;
         Health health;
 
         [Header("ETC")]
-        [SerializeField] float playerAnimationMaxSpeed = 1.76f;
+        [SerializeField] float playerRunAnimationMaxSpeed = 1.76f;
 
         void Start()
         {
@@ -37,24 +45,25 @@ namespace RPG.Movement
             agent.isStopped = true;
         }
 
-        public void StartMoveAction(Vector3 destination)
+        public void StartMoveAction(Vector3 destination, float speedFraction)
         {
             GetComponent<Scheduler>().StartAction(this);
-            MoveTo(destination);
+            MoveTo(destination, speedFraction);
         }
 
         private void UpdateAnimator()
         {
             Vector3 velocity = agent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-            float speedRatio = localVelocity.z / agent.speed * 2;
-            if (speedRatio > playerAnimationMaxSpeed) speedRatio = playerAnimationMaxSpeed;
+            float speedRatio = localVelocity.z;
+            if (speedRatio > playerRunAnimationMaxSpeed) speedRatio = playerRunAnimationMaxSpeed;
             animator.SetFloat("speed", speedRatio);
         }
 
-        public void MoveTo(Vector3 destination)
+        public void MoveTo(Vector3 destination, float speedFraction)
         {
             agent.isStopped = false;
+            agent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
             agent.SetDestination(destination);
         }
 

@@ -12,21 +12,30 @@ namespace RPG.Control
     public class AIController : MonoBehaviour
     {
         [Header("Movement Configuration")]
+        [Tooltip("How far will the enemy chase")]
         [SerializeField] float chaseDistance = 5f;
+        [Tooltip("How long will the enemy wait after chase")]
         [SerializeField] float suspicionTime = 5f;
+        [Tooltip("How long will the enemy wait in waypoint")]
         [SerializeField] float dwellTime = 2f;
+        [Tooltip("How close does the enemy has to get to the waypoint")]
         [SerializeField] float waypointTolerance = 1f;
-        [Range(0,1)]
-        [SerializeField] float speedMultiplier = 0.8f;
+        [Range(0, 1)]
+        [SerializeField] float patrolSpeedFraction = 0.5f;
         [SerializeField] PatrolPath patrolPath;
 
         [Header("Combat Configuration")]
+        [Tooltip("Apply suspicion")]
         [SerializeField] bool suspicion = true;
+        [Tooltip("Apply attack (for enemies)")]
         [SerializeField] bool attack = true;
         [SerializeField] float damage = 3f;
+        public float damageBonus = 0;
 
         [Header("Behaviour Configuration")]
+        [Tooltip("Deactivate 'Wander' to configure as patrol, deactivate both for standing still")]
         [SerializeField] bool patrol = true;
+        [Tooltip("Deactivate 'Wander' to configure as patrol, deactivate both for standing still")]
         [SerializeField] bool wander = true;
 
 
@@ -42,7 +51,7 @@ namespace RPG.Control
 
         public float timeSinceLastSawPlayer = Mathf.Infinity;
         public float timeSinceArriveToWaypoint = Mathf.Infinity;
-        public int waypointIndex; 
+        public int waypointIndex;
 
         private void Start()
         {
@@ -52,6 +61,7 @@ namespace RPG.Control
             mover = GetComponent<Mover>();
             if (patrolPath) waypointIndex = GetRandomWaypointIndex();
             else waypointIndex = 0;
+            if (gameObject.tag == "Boss") damageBonus = 5;
             guardPosition = transform.position;
         }
 
@@ -77,7 +87,7 @@ namespace RPG.Control
             {
                 Suspicious();
             }
-            else if (patrol) 
+            else if (patrol)
             {
                 Patrol();
             }
@@ -104,9 +114,9 @@ namespace RPG.Control
                 }
                 nextPos = GetCurrentWaypointPosition();
             }
-            if(timeSinceArriveToWaypoint > dwellTime)
+            if (timeSinceArriveToWaypoint > dwellTime)
             {
-                mover.StartMoveAction(nextPos);
+                mover.StartMoveAction(nextPos, patrolSpeedFraction);
             }
         }
 
@@ -119,7 +129,7 @@ namespace RPG.Control
         {
             if (wander)
             {
-                waypointIndex= GetRandomWaypointIndex();
+                waypointIndex = GetRandomWaypointIndex();
                 return;
             }
             waypointIndex = patrolPath.GetNextIndex(waypointIndex);
@@ -151,20 +161,20 @@ namespace RPG.Control
 
         public void BabyDragonNormal()
         {
-            player.GetComponent<Health>().TakeDamage(damage);
+            player.GetComponent<Health>().TakeDamage(damage + damageBonus);
         }
         public void SpiderNormal()
         {
-            player.GetComponent<Health>().TakeDamage(damage);
+            player.GetComponent<Health>().TakeDamage(damage + damageBonus);
         }
         public void LarvaNormal()
         {
             //if contains BOSS component/tag increase dmg
-            player.GetComponent<Health>().TakeDamage(damage);
+            player.GetComponent<Health>().TakeDamage(damage + damageBonus);
         }
         public void HyenaNormal()
         {
-            player.GetComponent<Health>().TakeDamage(damage);
+            player.GetComponent<Health>().TakeDamage(damage + damageBonus);
         }
     }
 
