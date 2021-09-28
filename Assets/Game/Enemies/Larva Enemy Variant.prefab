@@ -122,9 +122,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296967, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2082247353468296975, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
       propertyPath: m_Name
-      value: Larva Enemy
+      value: Larva Enemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3017861365175029383, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
       propertyPath: m_Avatar
