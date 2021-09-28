@@ -50,7 +50,7 @@ NavMeshAgent:
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 1900
-  m_StoppingDistance: 3.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3d1cd965f854044b3a9ea2dfd25635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  healthPoints: 100
 --- !u!114 &8989998082094441658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3389ef1469ed3441ad729934546d094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 9.3
+  playerRunAnimationMaxSpeed: 1.76
 --- !u!136 &8989998082094441654
 CapsuleCollider:
   m_ObjectHideFlags: 0

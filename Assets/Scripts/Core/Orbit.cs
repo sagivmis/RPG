@@ -79,7 +79,7 @@ namespace RPG.Core
             {
                 offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
                 //offset.y = 0f;
-
+                
                 transform.position = player.position + offset;
                 transform.LookAt(player.position);
             }

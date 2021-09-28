@@ -14,6 +14,7 @@ namespace RPG.Combat{
 
         Animator animator;
         Health target;
+        Mover mover;
         float timeSinceLastAttack = Mathf.Infinity;
         private void OnDrawGizmosSelected()
         {
@@ -27,6 +28,7 @@ namespace RPG.Combat{
         private void Start()
         {
             animator = GetComponent<Animator>();
+            mover = GetComponent<Mover>();
         }
 
         void Update()
@@ -39,11 +41,11 @@ namespace RPG.Combat{
 
             if (!IsInRange())
             {
-                GetComponent<Mover>().MoveTo(target.transform.position, 1f);
+                mover.MoveTo(target.transform.position, 1f);
             }
             else
             {
-                GetComponent<Mover>().Cancel();
+                mover.Cancel();
                 AttackBehaviour();
             }
         }
@@ -101,6 +103,7 @@ namespace RPG.Combat{
         public void Cancel()
         {
             StopAttack();
+            mover.Cancel();
             target = null;
         }
 
