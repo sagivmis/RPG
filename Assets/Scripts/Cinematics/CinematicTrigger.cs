@@ -13,10 +13,11 @@ namespace RPG.Cinematics
         {
             if (other.tag == "Player" && !triggered)
             {
-                triggered = true;
                 GetComponent<PlayableDirector>().Play();
+                triggered = true;
             }
         }
+
     }
 
 }

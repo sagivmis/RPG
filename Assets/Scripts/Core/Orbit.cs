@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using Cinemachine;
 
 namespace RPG.Core
 {
@@ -20,6 +21,9 @@ namespace RPG.Core
         public Vector3 offset;
         [SerializeField] float height = 0f;
         [SerializeField] float distance = 1f;
+
+        //[SerializeField] CinemachineVirtualCamera followCamera;
+        //[SerializeField] CinemachineVirtualCamera freeLookCamera;
 
         void Start()
         {
@@ -70,6 +74,10 @@ namespace RPG.Core
         }
         public virtual void OnDraggingStart(int mouseButton)
         {
+            //followCamera.Priority = 99;
+            //freeLookCamera.Priority = 100;
+
+
             //Debug.Log("MouseButton" + mouseButton + " START Drag");
         }
 
@@ -88,6 +96,8 @@ namespace RPG.Core
 
         public virtual void OnDraggingEnd(int mouseButton)
         {
+            //followCamera.Priority = 100; freeLookCamera.Priority = 99;
+
             //Debug.Log("MouseButton" + mouseButton + " END Drag");
         }
     }

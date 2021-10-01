@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &8218518008794406233
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3170529299598964143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.59
+  m_Height: 1.6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.5, z: 0.1}
 --- !u!1001 &3970586583868500640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,6 +77,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2082247353468296964, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+      propertyPath: weaponRange
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2082247353468296965, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
       propertyPath: healthPoints
       value: 100
@@ -89,6 +107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+--- !u!1 &3170529299598964143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2082247353468296975, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}
+  m_PrefabInstance: {fileID: 3970586583868500640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3170529299598964128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2082247353468296960, guid: 2a43c5b9b50a71846b3ef5314ca30b70, type: 3}

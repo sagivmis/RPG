@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_BLD_windmill_sail
       objectReference: {fileID: 0}
+    - target: {fileID: 2789820980117946254, guid: f3dbc511a3f0e8a4e88e4dd19495bb75, type: 3}
+      propertyPath: rotationMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3dbc511a3f0e8a4e88e4dd19495bb75, type: 3}
 --- !u!4 &1332876374185350727 stripped

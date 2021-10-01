@@ -9,11 +9,12 @@ namespace RPG.Combat{
     {
         [Header("Weapon Configuration")]
         [SerializeField] float weaponRange = 3f;
+        [SerializeField] float bossRange = 1f;
         [SerializeField] float timeBetweenAttacks = 1.05f;
         [SerializeField] float primaryWeaponDamage = 5f;
 
         Animator animator;
-        Health target;
+        public Health target;
         Mover mover;
         float timeSinceLastAttack = Mathf.Infinity;
         private void OnDrawGizmosSelected()
@@ -84,6 +85,7 @@ namespace RPG.Combat{
         }
         private bool IsInRange()
         {
+            if(target.gameObject.tag == "Boss") return Vector3.Distance(transform.position, target.transform.position) <= weaponRange+bossRange;
             return Vector3.Distance(transform.position, target.transform.position) <= weaponRange;
         }
 
