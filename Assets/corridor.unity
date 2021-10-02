@@ -309,6 +309,14 @@ PrefabInstance:
       value: 88.501
       objectReference: {fileID: 0}
     - target: {fileID: 1485395300084864230, guid: 5cf9b99ef165c3645ba744e705cce95f, type: 3}
+      propertyPath: fadedTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485395300084864230, guid: 5cf9b99ef165c3645ba744e705cce95f, type: 3}
+      propertyPath: fadeOutTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485395300084864230, guid: 5cf9b99ef165c3645ba744e705cce95f, type: 3}
       propertyPath: sceneToLoad
       value: 0
       objectReference: {fileID: 0}
@@ -1021,8 +1029,16 @@ PrefabInstance:
       value: -6.81
       objectReference: {fileID: 0}
     - target: {fileID: 1485395300084864230, guid: 5cf9b99ef165c3645ba744e705cce95f, type: 3}
+      propertyPath: fadedTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485395300084864230, guid: 5cf9b99ef165c3645ba744e705cce95f, type: 3}
       propertyPath: destination
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485395300084864230, guid: 5cf9b99ef165c3645ba744e705cce95f, type: 3}
+      propertyPath: fadeOutTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1485395300084864230, guid: 5cf9b99ef165c3645ba744e705cce95f, type: 3}
       propertyPath: sceneToLoad

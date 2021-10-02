@@ -27,6 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationMultiplier: 7e-12
+  zRotation: 0
 --- !u!1 &2479555153097553151
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,6 +69,18 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c859307ab7029bc4986b4b79ffadc1b6, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c859307ab7029bc4986b4b79ffadc1b6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c859307ab7029bc4986b4b79ffadc1b6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: c859307ab7029bc4986b4b79ffadc1b6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c859307ab7029bc4986b4b79ffadc1b6, type: 3}
       propertyPath: m_LocalPosition.x

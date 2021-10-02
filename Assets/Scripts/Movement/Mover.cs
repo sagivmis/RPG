@@ -55,7 +55,7 @@ namespace RPG.Movement
         {
             Vector3 velocity = agent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-            float speedRatio = localVelocity.z;
+            float speedRatio = Mathf.Abs(localVelocity.z); //absolute to not show walk back animation
             if (speedRatio > playerRunAnimationMaxSpeed) speedRatio = playerRunAnimationMaxSpeed;
             animator.SetFloat("speed", speedRatio);
         }

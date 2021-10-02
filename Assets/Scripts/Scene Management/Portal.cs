@@ -1,3 +1,4 @@
+using RPG.SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ public class Portal : MonoBehaviour
     }
 
     [SerializeField] int sceneToLoad = -1;
+    [SerializeField] float fadeOutTime = 0.5f;
+    [SerializeField] float fadedTime = 0.5f;
+    [SerializeField] float fadeInTime = 1f;
     [SerializeField] Transform spawnPoint;
     [SerializeField] DestinationIdentifier destination;
 
@@ -31,11 +35,21 @@ public class Portal : MonoBehaviour
             Debug.LogError("Scene to load not set.");
             yield break;
         }
+
+        Fader fader = FindObjectOfType<Fader>();
+        yield return fader.FadeOut(fadeOutTime);
+
         DontDestroyOnLoad(gameObject);
         yield return SceneManager.LoadSceneAsync(sceneToLoad);
+        // LOAD EVERYTHING HERE
 
         Portal otherPortal = GetOtherPortal();
         UpdatePlayer(otherPortal);
+
+        yield return new WaitForSeconds(fadedTime);
+
+
+        yield return fader.FadeIn(fadeInTime);
 
 
         Destroy(gameObject);
